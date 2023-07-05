@@ -10,8 +10,8 @@ yarn add -D eslint @rdgomt/eslint-config
 
 ```
 {
-  "extends": "@rocketseat/eslint-config/react"
-  // "extends": "@rocketseat/eslint-config" for node apps
+  "extends": "@rdgomt/eslint-config/react"
+  // "extends": "@rdgomt/eslint-config" for node apps
 }
 ```
 
