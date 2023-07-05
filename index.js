@@ -1,13 +1,14 @@
 module.exports = {
   env: {
+    es2022: true,
     node: true,
   },
   extends: [
     "eslint:recommended",
-    "prettier",
     "plugin:@typescript-eslint/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/all",
+    "plugin:prettier/recommended",
   ],
   ignorePatterns: ["node_modules", "build", "dist", "mocks"],
   parser: "@typescript-eslint/parser",
@@ -17,7 +18,6 @@ module.exports = {
     sourceType: "module",
   },
   plugins: [
-    "prettier",
     "@typescript-eslint",
     "import-helpers",
     "unused-imports",
@@ -124,7 +124,20 @@ module.exports = {
       },
     ],
     "prefer-template": "warn",
-    "prettier/prettier": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        arrowParens: "always",
+        bracketSpacing: true,
+        endOfLine: "lf",
+        printWidth: 120,
+        semi: false,
+        singleAttributePerLine: false,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: "all",
+      },
+    ],
     "require-await": "off",
     semi: "off",
     "sonarjs/no-duplicate-string": "warn",
@@ -172,6 +185,9 @@ module.exports = {
     "typescript-sort-keys/string-enum": "warn",
   },
   settings: {
+    "import/parsers": {
+      [require.resolve("@typescript-eslint/parser")]: [".ts", ".tsx", ".d.ts"],
+    },
     "import/resolver": {
       typescript: {
         project: "./tsconfig.json",

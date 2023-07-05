@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     node: false,
-    es2022: true,
+    browser: true,
   },
   extends: [
     "@react-native-community",
@@ -10,7 +10,15 @@ module.exports = {
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "./index.js",
   ],
-  plugins: ["react-perf", "unicorn", "@tanstack/query"],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    project: "tsconfig.json",
+    sourceType: "module",
+  },
+  plugins: ["react-perf"],
   rules: {
     "import-helpers/order-imports": [
       "warn",
