@@ -3,7 +3,7 @@
 1. Install the dependencies
 
 ```
-yarn add -D eslint @rdgomt/eslint-config
+yarn add -D eslint prettier @rdgomt/eslint-config
 ```
 
 2. Create a ```.eslintrc``` file extending the config:
