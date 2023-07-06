@@ -6,11 +6,12 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-comments/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/all",
     "plugin:prettier/recommended",
   ],
-  ignorePatterns: ["node_modules", "build", "dist", "mocks"],
+  ignorePatterns: ["node_modules", "build", "dist", "mocks", "coverage"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
@@ -49,11 +50,14 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    "@typescript-eslint/no-var-requires": "off",
     "comma-dangle": "off",
     curly: ["warn"],
     "default-param-last": "warn",
     "dot-notation": "warn",
     eqeqeq: "warn",
+    "eslint-comments/disable-enable-pair": "off",
+    "eslint-comments/no-unused-disable": "warn",
     "func-name-matching": "warn",
     "import-helpers/order-imports": [
       "warn",
@@ -69,7 +73,7 @@ module.exports = {
     "max-depth": [
       "warn",
       {
-        max: 1,
+        max: 2,
       },
     ],
     "max-lines": [

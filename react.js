@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     "@react-native-community",
     "plugin:storybook/recommended",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "./index.js",
@@ -18,7 +19,22 @@ module.exports = {
     project: "tsconfig.json",
     sourceType: "module",
   },
-  plugins: ["react-perf"],
+  plugins: ["react-hooks", "react-perf"],
+  overrides: [
+    {
+      files: ["App.tsx", "app.tsx"],
+      rules: {
+        "react/jsx-max-depth": "off",
+      },
+    },
+    {
+      files: ["*.stories.tsx"],
+      rules: {
+        "react/function-component-definition": "off",
+        "react/no-multi-comp": "off",
+      },
+    },
+  ],
   rules: {
     "import-helpers/order-imports": [
       "warn",
@@ -37,10 +53,69 @@ module.exports = {
         },
       },
     ],
+    "react/boolean-prop-naming": [
+      "warn", // react/boolean-prop-naming is not working at the moment
+      {
+        rule: "^(is|has|should)[A-Z]([A-Za-z0-9]?)+",
+        validateNested: true,
+        propTypeNames: ["bool", "boolean"],
+      },
+    ],
+    "react/destructuring-assignment": [
+      "warn",
+      "always",
+      { destructureInSignature: "always" },
+    ],
+    "react/function-component-definition": [
+      "warn",
+      {
+        namedComponents: "function-declaration",
+      },
+    ],
+    "react/jsx-boolean-value": ["warn", "never"],
+    "react/jsx-fragments": ["warn"],
     "react/jsx-key": "warn",
+    "react/jsx-max-depth": ["warn", { max: 4 }],
+    "react/jsx-no-constructed-context-values": "warn",
+    "react/jsx-no-leaked-render": ["warn"],
+    "react/jsx-no-useless-fragment": "off",
+    "react/jsx-pascal-case": [
+      "warn",
+      {
+        allowLeadingUnderscore: false,
+      },
+    ],
+    "react/jsx-wrap-multilines": [
+      "warn",
+      {
+        declaration: "parens",
+        assignment: "parens",
+        return: "parens",
+        arrow: "parens",
+        condition: "parens",
+        logical: "parens",
+        prop: "parens",
+      },
+    ],
+    "react/no-array-index-key": "warn",
+    "react/no-multi-comp": "warn",
+    "react/no-unescaped-entities": "off",
+    "react/no-unstable-nested-components": ["warn"],
+    "react/self-closing-comp": [
+      "warn",
+      {
+        component: true,
+        html: true,
+      },
+    ],
     "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-native/no-color-literals": "warn",
     "react-native/no-inline-styles": "warn",
-    "react-native/sort-styles": "warn",
+    "react-native/no-raw-text": "off",
+    "react-native/no-single-element-style-arrays": "warn",
+    "react-native/no-unused-styles": "warn",
+    "react-native/split-platform-components": "warn",
     "react-perf/jsx-no-jsx-as-prop": "warn",
     "react-perf/jsx-no-new-array-as-prop": "warn",
     "react-perf/jsx-no-new-function-as-prop": "warn",
