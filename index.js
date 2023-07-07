@@ -6,6 +6,8 @@ module.exports = {
   extends: [
     "eslint:all",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict",
     "plugin:eslint-comments/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/all",
@@ -28,6 +30,7 @@ module.exports = {
   ],
   root: true,
   rules: {
+    "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/naming-convention": [
       "off",
       {
@@ -52,6 +55,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
     "capitalized-comments": "off",
     "class-methods-use-this": "off",
     "comma-dangle": "off",
@@ -137,6 +141,7 @@ module.exports = {
         enforceForJSX: true,
       },
     ],
+    "no-use-before-define": "off",
     "no-useless-constructor": "off",
     "no-useless-return": "warn",
     "no-warning-comments": "off",
@@ -218,6 +223,10 @@ module.exports = {
     "unused-imports/no-unused-vars": "off",
     "typescript-sort-keys/interface": "off",
     "typescript-sort-keys/string-enum": "warn",
+
+    // evaluate better:
+    "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/unbound-method": "off",
   },
   settings: {
     "import/parsers": {

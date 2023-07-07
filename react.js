@@ -53,6 +53,14 @@ module.exports = {
         },
       },
     ],
+    "max-lines-per-function": [
+      "warn",
+      {
+        max: 100,
+        skipBlankLines: true,
+        skipComments: true,
+      },
+    ],
     "react/boolean-prop-naming": [
       "warn", // react/boolean-prop-naming is not working at the moment
       {
