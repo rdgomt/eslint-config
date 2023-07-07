@@ -6,7 +6,7 @@
 yarn add -D eslint prettier @rdgomt/eslint-config
 ```
 
-2. Create a ```.eslintrc``` file extending the config:
+2. Create a `.eslintrc` file extending the config:
 
 ```
 {
@@ -14,6 +14,8 @@ yarn add -D eslint prettier @rdgomt/eslint-config
   // "extends": "@rdgomt/eslint-config" for node apps
 }
 ```
+
+3. Add `"strictNullChecks": true` to `compilerOptions` inside `tsconfig.json` to take advantage of all typescript rules.
 
 ## What is included?
 
