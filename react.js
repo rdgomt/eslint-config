@@ -4,7 +4,6 @@ module.exports = {
     browser: true,
   },
   extends: [
-    "@react-native-community",
     "plugin:storybook/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -19,7 +18,7 @@ module.exports = {
     project: "tsconfig.json",
     sourceType: "module",
   },
-  plugins: ["react-hooks", "react-perf"],
+  plugins: ["react-hooks", "react-perf", "react-native"],
   overrides: [
     {
       files: ["App.tsx", "app.tsx"],
@@ -28,14 +27,25 @@ module.exports = {
       },
     },
     {
+      files: ["*.styles.tsx", "*.styles.ts"],
+      rules: {
+        "max-lines": "off",
+        "react/no-multi-comp": "off",
+      },
+    },
+    {
       files: ["*.stories.tsx"],
       rules: {
+        "max-lines": "off",
         "react/function-component-definition": "off",
+        "react/no-array-index-key": "off",
         "react/no-multi-comp": "off",
+        "react-native/no-color-literals": "off",
       },
     },
   ],
   rules: {
+    "@typescript-eslint/no-floating-promises": "off",
     "import-helpers/order-imports": [
       "warn",
       {
@@ -128,5 +138,10 @@ module.exports = {
     "react-perf/jsx-no-new-array-as-prop": "warn",
     "react-perf/jsx-no-new-function-as-prop": "warn",
     "react-perf/jsx-no-new-object-as-prop": "warn",
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };

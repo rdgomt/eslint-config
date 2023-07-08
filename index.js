@@ -56,6 +56,7 @@ module.exports = {
     ],
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/prefer-optional-chain": "warn",
     "capitalized-comments": "off",
     "class-methods-use-this": "off",
     "comma-dangle": "off",
@@ -83,7 +84,7 @@ module.exports = {
       "warn",
       {
         min: 2,
-        exceptions: ["_"],
+        exceptions: ["_", "x", "y"],
       },
     ],
     "init-declarations": "off",
