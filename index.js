@@ -75,7 +75,7 @@ module.exports = {
     "check-file/folder-naming-convention": [
       "error",
       {
-        "src/**/!(@types)/*": "KEBAB_CASE",
+        "src/*": "KEBAB_CASE",
       },
     ],
     "class-methods-use-this": "off",
