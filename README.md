@@ -31,3 +31,7 @@ yarn add -D eslint prettier @rdgomt/eslint-config
 - react/jsx-runtime
 - @tanstack/eslint-plugin-query
 - react-perf
+- eslint-plugin-etc
+- eslint-plugin-check-file
+- eslint-plugin-promise
+- eslint-plugin-security

@@ -18,7 +18,6 @@ module.exports = {
     project: "tsconfig.json",
     sourceType: "module",
   },
-  plugins: ["react-hooks", "react-perf", "react-native"],
   overrides: [
     {
       files: ["App.tsx", "app.tsx"],
@@ -44,6 +43,7 @@ module.exports = {
       },
     },
   ],
+  plugins: ["react-hooks", "react-native", "react-perf"],
   rules: {
     "@typescript-eslint/no-floating-promises": "off",
     "import-helpers/order-imports": [
