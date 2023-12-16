@@ -19,9 +19,16 @@ module.exports = {
     {
       files: ["*.spec.ts", "*.test.ts"],
       rules: {
+        "max-lines": "off",
         "max-lines-per-function": "off",
         "no-magic-numbers": "off",
         "no-new": "off",
+      },
+    },
+    {
+      files: ["*.presenter.ts", "*-presenter.ts"],
+      rules: {
+        "perfectionist/sort-objects": "off",
       },
     },
   ],
@@ -241,6 +248,7 @@ module.exports = {
           "args",
           "env",
           "Env",
+          "e2e",
           "fn",
           "Fn",
           "lib",
