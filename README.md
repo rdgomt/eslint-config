@@ -35,3 +35,4 @@ yarn add -D eslint prettier @rdgomt/eslint-config
 - eslint-plugin-check-file
 - eslint-plugin-promise
 - eslint-plugin-security
+- eslint-plugin-tailwindcss
